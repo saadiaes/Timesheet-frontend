@@ -1,0 +1,55 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <img src="../../assets/ed.png" style="height: 50px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navvvbar" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/timesheet">Timesheet</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <li><a class="dropdown-item" routerLink="/new-timesheet">New Timesheet</a></li>
+                        <li><a class="dropdown-item" routerLink="/timesheet">Timesheet</a></li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user">Employees</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbar" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/projet">Projects</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <li><a class="dropdown-item"  routerLink="/new-projet">New Projet</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDrropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/task">Tasks</a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <li><a class="dropdown-item"  routerLink="/new-task">New task</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Users
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/user" >Search user</a></li>
+                        <li><a class="dropdown-item"  routerLink="/new-user">New user</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+
+
+        </div>
+    </div>
+</nav>

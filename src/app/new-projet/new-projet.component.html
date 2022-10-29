@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="card col-md-6 offset-3 mt-2">
+        <div class="card-header">New Projet</div>
+        <div class="card-body">
+            <form [formGroup]="newProjetFormGroup" (ngSubmit)="handleSaveProjet()">
+                <div class="mb-3">
+                    <label class="form-label">Name:</label>
+                    <input type="text" formControlName="name" class="form-control">
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Date_debut:</label>
+                    <input type="date" formControlName="date_debut" class="form-control">
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date_fin:</label>
+                    <input type="date" formControlName="date_fin" class="form-control">
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Status:</label>
+                    <select formControlName="status" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+
+                        <option value="ToDo">ToDo</option>
+                        <option value="In progress">In progress</option>
+                        <option value="Done">Done</option>
+                    </select>
+                   <!-- <input type="text" formControlName="status" class="form-control">-->
+
+                </div>
+
+
+
+
+
+
+                <button [disabled]="!newProjetFormGroup.valid" class="btn btn-info">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+

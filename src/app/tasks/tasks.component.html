@@ -1,0 +1,57 @@
+<div class="container mt-2">
+    <ng-container *ngIf="task | async as listTasks;else failureOrLading">
+        <div class="card">
+            <div class="card-header">Tasks</div>
+            <div class="card-body">
+                <div *ngIf="searchFormGroup">
+                    <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchTasks()">
+                        <div class="input-group">
+                            <label class="input-group-text">keyword:</label>
+                            <input type="text" formControlName="keyword" class="form-control">
+                            <button class="btn btn-info">
+                                <i class="bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th><th>Name</th><th>Projet</th><th>Status</th><th>Employee</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let t of task | async">
+                        <td>{{t.id}}</td>
+                        <td>{{t.name}}</td>
+                        <td>{{t.projet}}</td>
+                        <td>{{t.status}}</td>
+                        <td>{{t.user}}</td>
+
+
+                        <td>
+                            <button (click)="handleDeleteTask(t)" class="btn btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </ng-container>
+    <ng-template #failureOrLading >
+        <ng-container *ngIf="errorMessage; else loading">
+
+            <div class="text-danger">
+                {{errorMessage}}
+            </div>
+        </ng-container>
+        <ng-template #loading>
+            Loading......
+        </ng-template>
+    </ng-template>
+</div>
+

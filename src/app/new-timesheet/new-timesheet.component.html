@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card col-md-6 offset-3 mt-2">
+        <div class="card-header">New Timesheet</div>
+        <div class="card-body">
+            <form [formGroup]="newTimesheetFormGroup" (ngSubmit)="handleSaveTimesheet()">
+                <div class="mb-3">
+                    <label class="form-label">Day_of_week:</label>
+                    <select formControlName="day" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                    </select>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Name_projet:</label>
+                    <input type="text" formControlName="name_projet" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">hours:</label>
+                    <input step=2 type="time" formControlName="hours" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Status:</label>
+                    <input type="text" formControlName="status" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">User:</label>
+                    <input type="text" formControlName="user" class="form-control">
+                </div>
+    <button [disabled]="!newTimesheetFormGroup.valid" class="btn btn-info">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

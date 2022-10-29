@@ -1,0 +1,37 @@
+<div class="container mt-2">
+      <ng-container *ngIf="timesheet | async as listTimesheet;else failureOrLading">
+        <div class="card">
+
+                <div class="card-header">Timesheet</div>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Day_of_week</th><th>Name_projet</th><th>Hours</th><th>Status</th><th>User</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let t of timesheet | async">
+                            <td>{{t.day}}</td>
+                            <td>{{t.name_projet}}</td>
+                            <td>{{t.hours}}</td>
+                            <td>{{t.status}}</td>
+                            <td>{{t.user}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+        </div>
+      </ng-container>
+    <ng-template #failureOrLading >
+        <ng-container *ngIf="errorMessage; else loading">
+
+            <div class="text-danger">
+                {{errorMessage}}
+            </div>
+        </ng-container>
+        <ng-template #loading>
+            Loading......
+        </ng-template>
+    </ng-template>
+</div>
